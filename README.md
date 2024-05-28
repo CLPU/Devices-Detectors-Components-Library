@@ -42,6 +42,8 @@ Categories left as template, left empty, or filled in by a NON-expert:
 
 All other categories can and should still be edited/commented, but the list above would definitely need work if those devices/items will be included.
 
+The `.odt` file format is used, to avoid problems with the underlaying `.zip` one may use [ReZipDoc](https://github.com/hoijui/ReZipDoc).
+
 ## Contributors
 Matthew Schwab <matthew.schwab@uni-jena.de>
 
