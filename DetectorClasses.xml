@@ -1,0 +1,399 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DetectorClasses>
+    
+    <!-- filled example for a spectrometer class object -->
+    <spectrometer>
+    
+        <category>   particle_spectrometer </category> <!-- particle_spectrometer, photon_spectrometer -->
+        <type>       ion_spectrometer      </type>     <!-- ion_spectrometer, electron_spectrometer, gamma_spectrometer, X_spectrometer, UV_spectrometer, visible_spectrometer, IR_spectrometer, THz_spectrometer -->
+        <identifier> CLPU-standard-tp      </identifier>
+        
+        <name lang="en">Thomson Parabola</name>
+        <name lang="es">Parábola de Thomson</name>
+        <name lang="fr">Parabole de Thomson</name>
+        <description lang="en">
+            The Thomson Parabola is a spectrometer that differentiates charged particles by energy and charge-to-mass ratio,
+            through deflection by static electric and magnetic fields. This model is most applied for ion spectrometry.
+            This model has a static magnetic field and can be equipped with variable screens and pinholes.
+        </description>
+        
+        <spectrum type="2D">
+            <axis id="1">
+                <separation>charge-to-mass</separation>
+                <SIunit>A s kg-1</SIunit>
+                <limits></limits>
+                <resolution></resolution>
+            </axis>
+            <axis id="2">
+                <separation>velovcity-charge-to-mass</separation>
+                <SIunit>A s2 kg-1 m-1</SIunit>
+                <limits>
+                    <projectile type="proton">
+                        <upper unit="MeV">10</upper>
+                        <lower unit="MeV">0.6</lower>
+                    </projectile>
+                </limits>
+                <resolution>
+                    <projectile type="proton">
+                        <point>
+                            <position unit="MeV">20</position>
+                            <value unit="MeV/mm">4.36</value>
+                        </point>
+                        <fit>
+                            <function unit="MeV/mm" input-variable="x" input-unit="MeV">x/20*4.36</function>
+                            <upper unit="MeV">0</upper>
+                            <lower unit="MeV">20</lower>
+                        </fit>
+                    </projectile>
+                </resolution>
+            </axis>
+        </spectrum>
+        
+        <operation> <!-- extra group of fields for operation parameters which vary from thing to thing -->
+            <voltage>
+                <device>capacitor</device>
+                <value type="maximum" unit="V">5000<value>
+                <connectors>SHV</connectors>
+            </voltage>
+        </operation>
+        
+        <lifecycle>
+            <acquisition type="manufacturing">
+                <team>
+                    <engineering>Diego de Luis</engineering>
+                    <science>Jon Apinaniz</science>
+                    <procuring>Diego de Luis</procuring>
+                </team>
+                <year>2019</year>
+                <price currency="EUR">15000</price>
+                <documentation type="link"></documentation>
+            </acquisition>
+            <comissioning>
+                <description lang="en">
+                    The Thomson Parabola was commissioned when first used.
+                </description>
+                <year>2019</year>
+                <characterization type="link"></characterization>
+                <calibration type="link"></calibration>
+                <citation type="link"></citation>
+            </comissioning>
+            <history>
+                <experiment id="CLPU-20MOR-V3C-00335-0101">
+                    <description lang="en">
+                        The detector is used as main ion diagnostic.
+                    </description>
+                    <setup>
+                        <start type"dd-mm-yyyy-HH:MM"></start>
+                        <end   type"dd-mm-yyyy-HH:MM"></end>
+                        <distance type="entrance-from-source" unit="mm">600</distance>
+                        <angle type="to-target-normal" unit="deg">0</angle>
+                        <pinhole type="diameter" unit="um">200</pinhole>
+                        <distance type="screen-from-magnet" unit="mm">100</distance>
+                        <screen reference="identifier">CLPU-MCP-2D-1</screen><!-- reference to a screen class object, example below, either by exact identifier or e.g. type or class if identifyer is not known -->
+                        <relay reference="identifier">CLPU-nikkor-2</relay>
+                        <screen reference="identifier">CLPU-192.168.60.12</screen>
+                        <documentation type="link"></documentation>
+                    </setup>
+                    <exposed type="number-of-irradiations-of-detector">1000</exposed>
+                    <debief lang="en">
+                        Entrance pinhole appears covered by debris.
+                    </debrief>
+                </experiment>
+                <maintenance>
+                    <description lang="en">
+                        Change pinhole THORLABS-XZY 200um to new pinhole 100um THORLABS-XVY.
+                    </description>
+                </maintenance>
+                <experiment id="CLPU-21HEN-V3I-00475-0101">
+                    <description lang="en">
+                        The detector is used as main ion diagnostic.
+                    </description>
+                    <setup>
+                        <start type"dd-mm-yyyy-HH:MM"></start>
+                        <end   type"dd-mm-yyyy-HH:MM"></end>
+                        <voltage device="capacitor" unit="V">3500</voltage>
+                        <distance type="entrance-from-source" unit="mm">600</distance>
+                        <angle type="to-target-normal" unit="deg">0</angle>
+                        <pinhole type="diameter" unit="um">100</pinhole>
+                        <distance type="screen-from-magnet" unit="mm">100</distance>
+                        <screen reference="identifier">CLPU-BC400-1</screen>
+                        <relay reference="identifier">CLPU-nikkor-2</relay>
+                        <screen reference="identifier">CLPU-192.168.60.12</screen>
+                        <documentation type="link"></documentation>
+                    </setup>
+                    <exposed type="number-of-irradiations-of-detector">1000</exposed>
+                    <debief lang="en">
+                        Survived experiment without noticable damage.
+                    </debrief>
+                </experiment>
+            </history>
+            <retirement>
+                <year></year>
+                <characterization type="link"></characterization>
+                <reason lang="en"></reason>
+            </retirement>
+        </lifecycle>
+    </spectrometer>
+
+    <!-- filled examples for a screen class object -->
+    <screen>
+        <category>photosites</category>
+        <type>cmos</type>
+        <identifier>CLPU-192.168.60.12</identifier>
+        
+        <name></name>
+        <description lang="en">
+            Commercial CMOS camera.
+        </description>
+        
+        <operation>
+            <temperatre>
+                <value type="maximum" unit="K">250<value>
+                <value type="minimum" unit="K">300<value>
+            </temperature>
+        </operation>
+        
+        <lifecycle>
+            <acquisition type="purchase">
+                <team>
+                    <procuring>Jon Apinaniz</procuring>
+                    <engineering></engineering>
+                    <science></science>
+                </team>
+                <producer>AlliedVision</producer> <!-- extra fields for type purchase -->
+                <modelno>Makor</modelno>          <!-- extra fields for type purchase -->
+                <seriesno>544811452114<seriesno>  <!-- extra fields for type purchase -->
+                <year>2019</year>
+                <price currency="EUR">1000</price>
+                <documentation type="link"></documentation>
+            </acquisition>
+            <comissioning>
+                <description lang="en">
+                    The CMOS was commissioned when first used.
+                </description>
+                <year>2019</year>
+                <characterization type="link"></characterization>
+                <calibration type="link"></calibration>
+                <citation type="link"></citation>
+            </comissioning>
+            <history>
+                <experiment id="CLPU-19VOL-V3I-00396-0101">
+                    <description lang="en">
+                        Part of a camera system that is used to film a screen.
+                    </description>
+                    <setup>
+                        <start type"dd-mm-yyyy-HH:MM"></start>
+                        <end   type"dd-mm-yyyy-HH:MM"></end>
+                        <magnification unit="px/mm">11</magnification>
+                        <resolution unit="um">200</resolution>
+                        <documentation type="link"></documentation>
+                    </setup>
+                    <exposed type="number-of-irradiations-of-detector">256</exposed>
+                    <debief lang="en">
+                        Survived experiment without noticable damage.
+                    </debrief>
+                </experiment>
+                <experiment id="CLPU-20MOR-V3C-00335-0101">
+                    <description lang="en">
+                        Part of a camera system that is used to suveil the target chamber.
+                    </description>
+                    <setup>
+                        <start type"dd-mm-yyyy-HH:MM"></start>
+                        <end   type"dd-mm-yyyy-HH:MM"></end>
+                        <magnification unit="px/mm">11</magnification>
+                        <resolution unit="um">200</resolution>
+                        <documentation type="link"></documentation>
+                    </setup>
+                    <exposed type="number-of-irradiations-of-detector">1000</exposed>
+                    <debief lang="en">
+                        3 pixels in centre burnt.
+                    </debrief>
+                </experiment>
+                <experiment id="CLPU-21HEN-V3I-00475-0101">
+                    <description lang="en">
+                        Part of a camera system that is used for focal spot diagnostics.
+                    </description>
+                    <setup>
+                        <start type"dd-mm-yyyy-HH:MM"></start>
+                        <end   type"dd-mm-yyyy-HH:MM"></end>
+                        <magnification unit="px/mm">1100</magnification>
+                        <resolution unit="um">3</resolution>
+                        <documentation type="link"></documentation>
+                    </setup>
+                    <exposed type="number-of-irradiations-of-detector">1000</exposed>
+                    <debief lang="en">
+                        Laser burn renders camera unresponsive.
+                    </debrief>
+                </experiment>
+            </history>
+            <retirement>
+                <year>2024</year>
+                <characterization type="link"></characterization>
+                <reason lang="en">Burnt by laser.</reason>
+            </retirement>
+        </lifecycle>
+    </screen>
+    
+    <screen>
+        <category>phosphor</category>
+        <type>mcp_coupled</type>
+        <identifier>CLPU-MCP-2D-1</identifier>
+        
+        <name></name>
+        <description lang="en">
+            Commercial Hamamatsu XXX MCP.
+        </description>
+        
+        <operation>
+            <temperatre>
+                <value type="maximum" unit="K">250<value>
+                <value type="minimum" unit="K">300<value>
+            </temperature>
+            <voltage>
+                <device>MCP</device>
+                <value type="maximum" unit="V">5000<value>
+                <connectors>SHV</connectors>
+            </voltage>
+        </operation>
+        
+        <lifecycle>
+            <acquisition type="purchase">
+                <team>
+                    <procuring>Jon Apinaniz</procuring>
+                    <engineering></engineering>
+                    <science></science>
+                </team>
+                <producer>Hammamatsu</producer>
+                <modelno>C777777</modelno>
+                <seriesno>123456789<seriesno>
+                <year>2019</year>
+                <price currency="EUR">100000</price>
+                <documentation type="link"></documentation>
+            </acquisition>
+            <comissioning>
+                <description lang="en">
+                    The MCP-Screen was commissioned when first used.
+                </description>
+                <year>2019</year>
+                <characterization type="link"></characterization>
+                <calibration type="link"></calibration>
+                <citation type="link"></citation>
+            </comissioning>
+            <history>
+                <experiment id="CLPU-19VOL-V3I-00396-0101">
+                    <description lang="en">
+                        Part of a Thomson Parabola.
+                    </description>
+                    <setup>
+                        <start type"dd-mm-yyyy-HH:MM"></start>
+                        <end   type"dd-mm-yyyy-HH:MM"></end>
+                        <voltage device="MCP" unit="V">4500</voltage>
+                        <documentation type="link"></documentation>
+                    </setup>
+                    <exposed type="number-of-irradiations-of-detector">256</exposed>
+                    <debief lang="en">
+                        Survived experiment without noticable damage.
+                    </debrief>
+                </experiment>
+            </history>
+            <retirement>
+                <year>2024</year>
+                <characterization type="link"></characterization>
+                <reason lang="en">Burnt by laser.</reason>
+            </retirement>
+        </lifecycle>
+    </screen>
+    
+    <!-- filled example for a relay class object -->
+    <relay>
+        <category>optics</category>
+        <type>objective</type>
+        <identifier>CLPU-nikkor-2</identifier>
+        
+        <name></name>
+        <description lang="en">
+            Commercial zoom objective.
+        </description>
+        
+        <operation>
+            <apperture>
+                <value type="maximum" unit="F/">1.8<value>
+                <value type="minimum" unit="F/">22<value>
+            </apperture>
+            <focal>
+                <value type="maximum" unit="mm">155<value>
+                <value type="minimum" unit="mm">55<value>
+            </focal>
+            <transmission>
+                <value type="minimum" unit="nm">400<value>
+                <value type="maximum" unit="nm">700<value>
+                <documentation type="link"></documentation>
+            </transmission>
+        </operation>
+        
+        <lifecycle>
+            <acquisition type="purchase">
+                <team>
+                    <procuring>Jon Apinaniz</procuring>
+                    <engineering></engineering>
+                    <science></science>
+                </team>
+                <producer>Nikon</producer> <!-- extra fields for type purchase -->
+                <modelno>Nikkorcc</modelno>          <!-- extra fields for type purchase -->
+                <seriesno>544811452114<seriesno>  <!-- extra fields for type purchase -->
+                <year>2019</year>
+                <price currency="EUR">500</price>
+                <documentation type="link"></documentation>
+            </acquisition>
+            <comissioning>
+                <description lang="en">
+                    The objective was commissioned when first used.
+                </description>
+                <year>2019</year>
+                <characterization type="link"></characterization>
+                <calibration type="link"></calibration>
+                <citation type="link"></citation>
+            </comissioning>
+            <history>
+                <experiment id="CLPU-19VOL-V3I-00396-0101">
+                    <description lang="en">
+                        Part of a camera system that is used to film a screen.
+                    </description>
+                    <setup>
+                        <start type"dd-mm-yyyy-HH:MM"></start>
+                        <end   type"dd-mm-yyyy-HH:MM"></end>
+                        <apperture unit="F/">11</distance>
+                        <focal unit="mm">100</distance>
+                        <documentation type="link"></documentation>
+                    </setup>
+                    <exposed type="number-of-irradiations-of-detector">256</exposed>
+                    <debief lang="en">
+                        Survived experiment without noticable damage.
+                    </debrief>
+                </experiment>
+                <experiment id="CLPU-20MOR-V3C-00335-0101">
+                    <description lang="en">
+                        Part of a camera system that is used to suveil the target chamber.
+                    </description>
+                    <setup>
+                        <start type"dd-mm-yyyy-HH:MM"></start>
+                        <end   type"dd-mm-yyyy-HH:MM"></end>
+                        <apperture unit="F/">11</distance>
+                        <focal unit="mm">100</distance>
+                        <documentation type="link"></documentation>
+                    </setup>
+                    <exposed type="number-of-irradiations-of-detector">1000</exposed>
+                    <debief lang="en">
+                        Survived experiment without noticable damage.
+                    </debrief>
+                </experiment>
+            </history>
+            <retirement>
+                <year>2024</year>
+                <characterization type="link"></characterization>
+                <reason lang="en">Burnt by laser.</reason>
+            </retirement>
+        </lifecycle>
+    </relay>
+    
+</DetectorClasses>
