@@ -49,13 +49,13 @@
             </axis>
         </spectrum>
         
-        <operation> <!-- extra group of fields for operation parameters which vary from thing to thing -->
+        <specifications> <!-- extra group of fields for specifications parameters which vary from thing to thing -->
             <voltage>
                 <device>capacitor</device>
                 <value type="maximum" unit="V">5000</value>
                 <connectors>SHV</connectors>
             </voltage>
-        </operation>
+        </specifications>
         
         <lifecycle>
             <acquisition type="manufacturing">
@@ -146,12 +146,12 @@
             Commercial CMOS camera.
         </description>
         
-        <operation>
+        <specifications>
             <temperatre>
                 <value type="maximum" unit="K">250</value>
                 <value type="minimum" unit="K">300</value>
             </temperature>
-        </operation>
+        </specifications>
         
         <lifecycle>
             <acquisition type="purchase">
@@ -244,7 +244,7 @@
             Commercial Hamamatsu XXX MCP.
         </description>
         
-        <operation>
+        <specifications>
             <temperatre>
                 <value type="maximum" unit="K">250</value>
                 <value type="minimum" unit="K">300</value>
@@ -254,7 +254,7 @@
                 <value type="maximum" unit="V">5000</value>
                 <connectors>SHV</connectors>
             </voltage>
-        </operation>
+        </specifications>
         
         <lifecycle>
             <acquisition type="purchase">
@@ -315,7 +315,7 @@
             Commercial zoom objective.
         </description>
         
-        <operation>
+        <specifications>
             <apperture>
                 <value type="maximum" unit="F/">1.8</value>
                 <value type="minimum" unit="F/">22</value>
@@ -329,7 +329,7 @@
                 <value type="maximum" unit="nm">700</value>
                 <documentation type="link"></documentation>
             </transmission>
-        </operation>
+        </specifications>
         
         <lifecycle>
             <acquisition type="purchase">
