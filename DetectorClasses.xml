@@ -52,7 +52,7 @@
         <operation> <!-- extra group of fields for operation parameters which vary from thing to thing -->
             <voltage>
                 <device>capacitor</device>
-                <value type="maximum" unit="V">5000<value>
+                <value type="maximum" unit="V">5000</value>
                 <connectors>SHV</connectors>
             </voltage>
         </operation>
@@ -148,8 +148,8 @@
         
         <operation>
             <temperatre>
-                <value type="maximum" unit="K">250<value>
-                <value type="minimum" unit="K">300<value>
+                <value type="maximum" unit="K">250</value>
+                <value type="minimum" unit="K">300</value>
             </temperature>
         </operation>
         
@@ -246,12 +246,12 @@
         
         <operation>
             <temperatre>
-                <value type="maximum" unit="K">250<value>
-                <value type="minimum" unit="K">300<value>
+                <value type="maximum" unit="K">250</value>
+                <value type="minimum" unit="K">300</value>
             </temperature>
             <voltage>
                 <device>MCP</device>
-                <value type="maximum" unit="V">5000<value>
+                <value type="maximum" unit="V">5000</value>
                 <connectors>SHV</connectors>
             </voltage>
         </operation>
@@ -317,16 +317,16 @@
         
         <operation>
             <apperture>
-                <value type="maximum" unit="F/">1.8<value>
-                <value type="minimum" unit="F/">22<value>
+                <value type="maximum" unit="F/">1.8</value>
+                <value type="minimum" unit="F/">22</value>
             </apperture>
             <focal>
-                <value type="maximum" unit="mm">155<value>
-                <value type="minimum" unit="mm">55<value>
+                <value type="maximum" unit="mm">155</value>
+                <value type="minimum" unit="mm">55</value>
             </focal>
             <transmission>
-                <value type="minimum" unit="nm">400<value>
-                <value type="maximum" unit="nm">700<value>
+                <value type="minimum" unit="nm">400</value>
+                <value type="maximum" unit="nm">700</value>
                 <documentation type="link"></documentation>
             </transmission>
         </operation>
