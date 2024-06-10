@@ -396,4 +396,168 @@
         </lifecycle>
     </relay>
     
+    <!-- filled example for a recorder class object -->
+    <recorder>
+        <category>time_domain</category>
+        <type>oscilloscope</type>
+        <identifier>CLPU-RS2GHz</identifier>
+        
+        <name></name>
+        <description lang="en">
+            2GHz oscilloscope.
+        </description>
+        
+        <specifications>
+            <sampling>
+                <value type="maximum" unit="GS/s">10</value>
+            </sampling>
+            <bandwidth>
+                <value type="maximum" unit="GHz">2</value>
+                <value type="minimum" unit="MHz">200</value>
+            </bandwidth>
+            <impedance>
+                <value type="low" unit="Ohm">50</value>
+                <value type="high" unit="Ohm">1000000</value>
+            </impedance>
+            <channels>
+                <value type="functional">4</value>
+                <value type="total">4</value>
+            </channels>
+        </specifications>
+        
+        <lifecycle>
+            <acquisition type="purchase">
+                <team>
+                    <procuring>Michael Ehret</procuring>
+                    <engineering></engineering>
+                    <science></science>
+                </team>
+                <producer>Rhode&amp;Schwarz</producer> 
+                <modelno>RTO6</modelno>         
+                <seriesno><seriesno>
+                <year>2021</year>
+                <price currency="EUR">15000</price>
+                <documentation type="link"></documentation>
+            </acquisition>
+            <comissioning>
+                <description lang="en">
+                    The oscilloscope was commissioned when first used.
+                </description>
+                <year>2021</year>
+                <characterization type="link"></characterization>
+                <calibration type="link"></calibration>
+                <citation type="link"></citation>
+            </comissioning>
+            <history>
+                <experiment id="CLPU-19VOL-V3I-00396-0101">
+                    <description lang="en">
+                        Part of a measurement circuit to characterize cavity modes.
+                    </description>
+                    <setup>
+                        <start type"dd-mm-yyyy-HH:MM"></start>
+                        <end   type"dd-mm-yyyy-HH:MM"></end>
+                        <channels>
+                            <channel id="1">
+                                <name>Photodiode</name>
+                                <attenuation type="set-in-software">20dB</attenuation>
+                                <attenuation type="additional">20dB</attenuation>
+                            </channel>
+                        </channels>
+                        <delay unit="ms">2.1</delay>
+                    </setup>
+                    <exposed type="number-of-irradiations-of-detector">256</exposed>
+                    <debief lang="en">
+                        Survived experiment without noticable damage.
+                    </debrief>
+                </experiment>
+            </history>
+            <retirement>
+                <year>2024</year>
+                <characterization type="link"></characterization>
+                <reason lang="en">Burnt by high voltage.</reason>
+            </retirement>
+        </lifecycle>
+    </recorder>
+    
+    <!-- filled example for a probe class object -->
+    <probe>
+        <category>antenna</category>
+        <type>E_field</type>
+        <identifier>CLPU-OMNI1</identifier>
+        <name></name>
+        <description lang="en">
+            2GHz omni.directional E-field antenna.
+        </description>
+        
+        <specifications>
+            <bandwidth>
+                <value type="maximum" unit="GHz">2</value>
+                <value type="minimum" unit="MHz">380</value>
+            </bandwidth>
+            <impedance>
+                <value unit="Ohm">50</value>
+            </impedance>
+        </specifications>
+        
+        <lifecycle>
+            <acquisition type="purchase">
+                <team>
+                    <procuring>Michael Ehret</procuring>
+                    <engineering></engineering>
+                    <science></science>
+                </team>
+                <producer>Aaronia</producer> 
+                <modelno>OmniLog3800</modelno>         
+                <seriesno><seriesno>
+                <year>2022</year>
+                <price currency="EUR">1000</price>
+                <documentation type="link"></documentation>
+            </acquisition>
+            <comissioning>
+                <description lang="en">
+                    The antenna was commissioned when first used.
+                </description>
+                <year>2022</year>
+                <characterization type="link"></characterization>
+                <calibration type="link"></calibration>
+                <citation type="link"></citation>
+            </comissioning>
+            <history>
+                <experiment id="CLPU-19VOL-V3I-00396-0101">
+                    <description lang="en">
+                        Part of a measurement circuit to characterize cavity modes.
+                    </description>
+                    <setup>
+                        <start type"dd-mm-yyyy-HH:MM"></start>
+                        <end   type"dd-mm-yyyy-HH:MM"></end>
+                        <position type="inside-V3">
+                            <anchor type="origin">focalspot</anchor>
+                            <axis id="1">
+                                <anchor type="axis">focalcone</anchor>
+                                <value unit="cm">30</value>
+                            </axis>
+                            <axis id="2">
+                                <anchor type="axis">vertical</anchor>
+                                <value unit="cm">15</value>
+                            </axis>
+                            <axis id="3">
+                                <anchor type="orthonormal">horizontal</anchor>
+                                <value unit="cm">1</value>
+                            </axis>
+                        </position>
+                    </setup>
+                    <exposed type="number-of-irradiations-of-detector">256</exposed>
+                    <debief lang="en">
+                        Survived experiment without noticable damage.
+                    </debrief>
+                </experiment>
+            </history>
+            <retirement>
+                <year>2024</year>
+                <characterization type="link"></characterization>
+                <reason lang="en">Burnt by laser.</reason>
+            </retirement>
+        </lifecycle>
+    </probe>
+    
 </DetectorClasses>

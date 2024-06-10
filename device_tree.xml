@@ -1,0 +1,61 @@
+<?--
+DRAFT TREE FOR ELECTRONIC DEVICES
+
+4 layer top level organization tree
+
+FAMILY  OBJECT  CATEGORY TYPE
+...
+
+device
+├────── recorder
+│       ├────── time_domain
+│       │       └────── oscilloscope
+│       └────── frequency_domain
+│               ├────── network_analyzer
+│               ├────── vector_network_analyzer
+│               └────── spectrum_analyzer
+├────── probe
+│       ├────── antenna
+│       │       ├────── E_field
+│       │       ├────── B_field
+│       │       ├────── B_dot
+│       │       ├────── D_dot
+│       │       ├────── H
+│       │       └────── D
+│       ├────── inductive
+│       │       ├────── beam_monitor
+│       │       └────── coax_monitor
+│       ├────── differential
+│       │       ├────── voltage
+│       │       └────── current
+│       ├────── pressure
+│       │       ├────── bellow
+│       │       ├────── diaphragm
+│       │       └────── bourdon
+│       ├────── temperature
+│       │       ├────── contact
+│       │       └────── no_contact
+│       └────── vibration
+│               ├────── accelerometer
+│               ├────── velometer
+│               ├────── displacement
+│               ├────── proximity
+│               └────── laser_vibrometer
+├────── generator
+│       ├────── voltage
+│       │       ├────── static
+│       │       └────── pulsed
+│       ├────── delay
+│       │       ├────── static
+│       │       └────── pulsed
+│       └────── current
+├────── motor ...        
+...
+
+optics
+├────── ...
+...
+
+...
+
+-->
